@@ -7,7 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAppFirstProject", "WebAp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplicationDataEntity", "WebApplicationDataEntity\WebApplicationDataEntity.csproj", "{5D7ED312-C91D-423A-BBBA-159FF17B9017}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplicationRepository", "WebApplicationRespository\WebApplicationRepository.csproj", "{6F069145-32C4-4BDB-B123-EF50A59A8E5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplicationRepository", "WebApplicationRespository\WebApplicationRepository.csproj", "{6F069145-32C4-4BDB-B123-EF50A59A8E5B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplicationBussinessServices", "WebApplication.BussinessServices\WebApplicationBussinessServices.csproj", "{DE028DC0-99C7-440E-B389-7297A9F51B37}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplocationBussinessEntity", "WebApplocationBussinessEntity\WebApplocationBussinessEntity.csproj", "{3C2A585C-E175-4DF5-B76B-50F2468134E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplicationCommon", "WebApplicationCommon\WebApplicationCommon.csproj", "{E6E85333-0D30-4DCA-89EF-C34AAFD2A46E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +33,18 @@ Global
 		{6F069145-32C4-4BDB-B123-EF50A59A8E5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F069145-32C4-4BDB-B123-EF50A59A8E5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F069145-32C4-4BDB-B123-EF50A59A8E5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE028DC0-99C7-440E-B389-7297A9F51B37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE028DC0-99C7-440E-B389-7297A9F51B37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE028DC0-99C7-440E-B389-7297A9F51B37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE028DC0-99C7-440E-B389-7297A9F51B37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C2A585C-E175-4DF5-B76B-50F2468134E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C2A585C-E175-4DF5-B76B-50F2468134E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C2A585C-E175-4DF5-B76B-50F2468134E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C2A585C-E175-4DF5-B76B-50F2468134E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6E85333-0D30-4DCA-89EF-C34AAFD2A46E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6E85333-0D30-4DCA-89EF-C34AAFD2A46E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6E85333-0D30-4DCA-89EF-C34AAFD2A46E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6E85333-0D30-4DCA-89EF-C34AAFD2A46E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

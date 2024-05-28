@@ -9,9 +9,14 @@ namespace WebApplicationRespository.Interface
 {
     public interface IStateRepository
     {
-        List<TblState> GetStates();
+        List<TblState> GetState();
 
         TblState GetState(int id);
+
+
+        bool AddEditState(TblState state);
+
+        bool DeleteState(int id);
 
     }
 }

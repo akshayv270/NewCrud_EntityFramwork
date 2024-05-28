@@ -1,0 +1,17 @@
+﻿@model StateViewModel
+
+@ViewData["FormTitle"]
+<form asp-action="AddState" asp-controller="State" method="post">
+
+
+    <input type="hidden" asp-for="Id"/>
+    <input type="text"  asp-for="StateName"/>
+
+    <input type="checkbox" asp-for="IsActive" />
+
+
+    <input type="submit" value="Save"/>
+
+
+
+</form>

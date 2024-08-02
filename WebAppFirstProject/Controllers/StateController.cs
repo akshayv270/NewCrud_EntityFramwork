@@ -116,7 +116,7 @@ namespace WebAppFirstProject.Controllers
 
 
 
-
+        //Scaffold-DbContext "Server=LAPTOP-BLNTEBH7\SQLEXPRESS;Database=Weltec_Wed_Batch;Trusted_Connection=True;TrustServerCertificate=true" Microsoft.EntityFrameworkCore.SqlServer
 
 
 

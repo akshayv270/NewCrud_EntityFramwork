@@ -20,8 +20,10 @@ namespace WebApplicationDataEntity
         public virtual DbSet<Department> Departments { get; set; } = null!;
         public virtual DbSet<EmergencyContact> EmergencyContacts { get; set; } = null!;
         public virtual DbSet<Employee> Employees { get; set; } = null!;
+        public virtual DbSet<RoleMaster> RoleMasters { get; set; } = null!;
         public virtual DbSet<TblCity> TblCities { get; set; } = null!;
         public virtual DbSet<TblState> TblStates { get; set; } = null!;
+        public virtual DbSet<User> Users { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -134,6 +136,20 @@ namespace WebApplicationDataEntity
                     .HasColumnName("salary");
             });
 
+            modelBuilder.Entity<RoleMaster>(entity =>
+            {
+                entity.HasKey(e => e.RoleId)
+                    .HasName("PK__role_mas__760965CC15C9F9C2");
+
+                entity.ToTable("role_master");
+
+                entity.Property(e => e.RoleId).HasColumnName("role_id");
+
+                entity.Property(e => e.RoleName)
+                    .HasMaxLength(50)
+                    .HasColumnName("role_name");
+            });
+
             modelBuilder.Entity<TblCity>(entity =>
             {
                 entity.ToTable("tbl_City");
@@ -155,6 +171,55 @@ namespace WebApplicationDataEntity
                 entity.Property(e => e.Isactive).HasColumnName("isactive");
 
                 entity.Property(e => e.StateName).HasMaxLength(100);
+            });
+
+            modelBuilder.Entity<User>(entity =>
+            {
+                entity.HasKey(e => e.User1Id)
+                    .HasName("PK__users__0A8B3F02176D14CB");
+
+                entity.ToTable("users");
+
+                entity.Property(e => e.User1Id).HasColumnName("user1_id");
+
+                entity.Property(e => e.Dob)
+                    .HasColumnType("date")
+                    .HasColumnName("DOB");
+
+                entity.Property(e => e.EmailId)
+                    .HasMaxLength(200)
+                    .HasColumnName("email_id");
+
+                entity.Property(e => e.Gender)
+                    .HasMaxLength(1)
+                    .IsUnicode(false)
+                    .HasColumnName("gender")
+                    .IsFixedLength();
+
+                entity.Property(e => e.IsActive).HasColumnName("is_active");
+
+                entity.Property(e => e.PasswordSolt)
+                    .HasMaxLength(500)
+                    .HasColumnName("password_solt");
+
+                entity.Property(e => e.Passwords)
+                    .HasMaxLength(500)
+                    .HasColumnName("passwords");
+
+                entity.Property(e => e.PhoneNo)
+                    .HasMaxLength(12)
+                    .HasColumnName("phone_no");
+
+                entity.Property(e => e.RoleId).HasColumnName("role_id");
+
+                entity.Property(e => e.Username)
+                    .HasMaxLength(250)
+                    .HasColumnName("username");
+
+                entity.HasOne(d => d.Role)
+                    .WithMany(p => p.Users)
+                    .HasForeignKey(d => d.RoleId)
+                    .HasConstraintName("FK__users__role_id__71D1E811");
             });
 
             OnModelCreatingPartial(modelBuilder);

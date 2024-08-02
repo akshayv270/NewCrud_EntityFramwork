@@ -1,0 +1,25 @@
+﻿@model List<StateViewModel>
+
+
+ @* @TempData.Peek("message")  *@
+
+	 @* @TempData["message"]  *@
+
+@{
+	var p = TempData["message"];
+	TempData.Keep("message");
+}
+@p
+
+	@foreach(var a in Model)
+{
+	 <div>@a.Id @a.StateName >
+	 <a asp-controller="State" asp-action="AddState" asp-route-id="@a.Id">EDIT</a>
+	<a asp-controller="State" asp-action="DeleteState" asp-route-id="@a.Id"  method="post"  >DELETE</a>
+	 <form asp-controller="State" asp-action="DeleteState" asp-route-id="@a.Id" method="post" style="display:inline;">
+                <button type="submit">DELETE</button>
+            </form>
+
+
+	</div>
+}

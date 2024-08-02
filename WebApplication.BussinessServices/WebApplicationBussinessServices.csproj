@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\WebApplicationCommon\WebApplicationCommon.csproj" />
     <ProjectReference Include="..\WebApplicationRespository\WebApplicationRepository.csproj" />
     <ProjectReference Include="..\WebApplocationBussinessEntity\WebApplocationBussinessEntity.csproj" />

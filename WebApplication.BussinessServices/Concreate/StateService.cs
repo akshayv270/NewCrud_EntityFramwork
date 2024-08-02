@@ -8,6 +8,8 @@ using WebApplicationRespository.Interface;
 using WebApplicationRespository.Concreate;
 using WebApplocationBussinessEntity;
 using WebApplicationCommon;
+using AutoMapper;
+using WebApplicationDataEntity;
 
 namespace WebApplicationBussinessServices.Concreate
 {
@@ -15,14 +17,18 @@ namespace WebApplicationBussinessServices.Concreate
     {
         private readonly IStateRepository stateRepo;
 
-        public StateService()
+        private readonly IMapper _mapper;
+
+        public StateService(IStateRepository stateRepository, IMapper mapper)
         {
-            stateRepo = new StateRepository();
+            stateRepo = stateRepository;
+            _mapper = mapper;
         }
 
-        public bool AddEditState(StateViewModel user)
+        public bool AddEditState(StateViewModel state)
         {
-            return stateRepo.AddEditState(user.ToDataEntity());
+            var p = _mapper.Map<TblState>(state);
+            return stateRepo.AddEditState(p);
         }
 
         public bool DeleteState(int id)
@@ -33,15 +39,16 @@ namespace WebApplicationBussinessServices.Concreate
         public StateViewModel GetState(int id)
         {
             var d = stateRepo.GetState(id);
-            return d.ToViewModel();
+           return _mapper.Map<StateViewModel>(d);
+            // return d.ToViewModel();
         }
 
 
         public List<StateViewModel> GetState()
         {
             var d = stateRepo.GetState();
-
-           return d.ToViewModel();
+            return _mapper.Map<List<StateViewModel>>(d);
+           //return d.ToViewModel();
         }
     }
 }

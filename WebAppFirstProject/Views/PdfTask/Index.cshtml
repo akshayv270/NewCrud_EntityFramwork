@@ -1,0 +1,29 @@
+﻿@model PdfUploadViewModel;
+
+<form asp-action="Index" asp-controller="PdfTask" enctype="multipart/form-data" method="post">
+   <div>
+        <label for="PdfFile">Upload PDF</label>
+        <input type="file" name="PdfFile" id="PdfFile" />
+    </div>
+    <button type="submit">Upload</button>
+</form>
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="validation-summary-errors">
+        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+        {
+            <p>@error.ErrorMessage</p>
+        }
+    </div>
+}
+
+@if (Model?.ExtractedData != null)
+{
+    <h2>Extracted Data</h2>
+     <p>First Name: @Model.ExtractedData.FirstName</p>
+    <p>Last Name: @Model.ExtractedData.LastName</p>
+    <p>Mobile: @Model.ExtractedData.Mobile</p>
+    <p>Email: @Model.ExtractedData.Email</p>
+    <p>Technical Skill: @Model.ExtractedData.TechnicalSkill</p>
+}

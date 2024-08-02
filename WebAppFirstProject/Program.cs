@@ -1,9 +1,21 @@
 
 //var builder = xWebApplication.CreateBuilder(args);
+using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using WebApplicationBussinessServices;
+using WebApplicationDataEntity;
+using WebApplicationRepository;
+
 var builder = Microsoft.AspNetCore.Builder.WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+var configuration = builder.Configuration;
+var connectionString = configuration.GetConnectionString("Mydatabase");
+builder.Services.AddDbContext<Employee_ManagmentContext>(options => options.UseSqlServer(connectionString));
+RepositoryDepedencyContainer.Registration(builder.Services);
+ServiceDepedencyContainer.Registration(builder.Services);
 
 var app = builder.Build();
 
